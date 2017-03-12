@@ -1,0 +1,13 @@
+body {
+     background-image: url("welcomepic.jpg");
+     padding-top: 50px;
+     color: red;
+}
+
+.welcome{
+    text-align: center;
+}
+
+.first{
+    float: left;
+}

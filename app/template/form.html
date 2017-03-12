@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form action="/process" method="post" enctype="multipart/form-data">
+  <h2>Please sign in</h2>
+  {% if error %}
+    <div class=" ">
+      <strong>Error:</strong> {{ error }}
+    </div>
+  {% endif %}
+  <div class=" ">
+    <label for="name" class="">Firstname</label>
+    <input type="text" id="name" name="fname" placeholder="Enter Your Firstname" required />
+  </div>
+  
+  <div class=" ">
+    <label for="lname" class=" ">Lastname</label>
+    <input type="text" id="lname" name="lname" placeholder="Enter Your Lastname" required/>
+  </div>
+  
+  <div class="">
+    <label for="age" class="">Age</label>
+    <input type="text" id="age" name="age" placeholder="Enter Your Age" required/>
+  </div>
+  
+  <div class="">
+    <label for="gender" class="">Gender</label>
+    <select>
+       <option value="Female">Female</option>
+       <option value="Male">Male</option>
+    </select>
+  </div>
+  
+  <div class="">
+    <label for="bio" class="">Biography</label>
+    <input type="textarea" name="bio" id="bio" placeholder="Enter Your Biography" required/>
+  </div>
+  
+  <div class="form-group">
+    <label for="file">Image</label>
+    <input type="file" name="file" placeholder="Enter Your Profile Image" required/>
+  </div>
+  
+  <button class=" " type="submit">Submission</button>
+</form>
+{% endblock %}

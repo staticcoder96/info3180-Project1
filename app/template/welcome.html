@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="welcome"> WELCOME!!!</h1>
+<p class="welcome"> You Can Add Your Profile and View Other Person's Profile.<br/>
+    This Application is for Naruto Shippuden Characters ONLY!!! .</p>
+
+<img src="/uploads/welcomepic.jpg" alt="Naruto Shippuden Characters" style="width:128px;height:128px;"> 
+
+<div class="first">
+    <p>This image is a link to add your profile. You can click on it.</p>
+<a href="{{ url_for('addProfile') }}">
+  <img src="/uploads/add.jpg" alt="Link to Add Your Profile" style="width:42px;height:42px;border:0;">
+</a>
+</div>
+
+
+<div class="first">
+    <p>This image is a link to show all profiles. You can click on it.</p>
+<a href="{{ url_for('showProfiles') }}">
+  <img src="/uploads/showall.png" alt="Link to Show all Profiles" style="width:42px;height:42px;border:0;">
+</a>
+</div>
+
+<div class="first">
+    <p>This image is a link to show any individual profile. You can click on it.</p>
+<a href="{{ url_for('oneProfile') }}">
+  <img src="/uploads/show1.png" alt="Link to Show all Profiles" style="width:42px;height:42px;border:0;">
+</a>
+</div>
+
+
+
+{% endblock %}
