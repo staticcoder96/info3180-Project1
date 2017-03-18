@@ -41,7 +41,7 @@ def addProfile():
          userid = id()
          date= timeinfo()
          
-         user = Profiles(userid=userid,Firstname=fname,Lastname=lname,Username=uname,Gender=gender, Age=age, Biography=bio,Date=date)
+         user = Profiles(userid=userid,fname=fname,lname=lname,uname=uname,gender=gender, age=age, bio=bio,date=date)
          db.session.add(user)
          db.session.commit()
          
@@ -72,7 +72,9 @@ def showProfiles():
 
 @app.route('/profile/<userid>', methods=["GET", "POST"])
 def oneProfile(userid):
+    userid = id()
     user = Profiles.query.filter_by(userid=userid).first()
+    
     if request.method == "GET":
         file_folder = app.comfig['UPLOAD_FOLDER']
         return render_template('one.html',user=user)
@@ -117,11 +119,6 @@ def add_header(response):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
-
-@app.errorhandler(404)
-def page_not_found(error):
-    """Custom 404 page."""
-    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
