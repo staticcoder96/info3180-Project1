@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<p class="all"> All Users </p>
+
+{% for people in users %}
+
+<div class="left"> 
+<img src="{{ url_for('static',filename='uploads/'+people.image) }}"> </img>
+
+
+<div class="right">
+    <table>
+        <tr>
+            <th> <b> {{people.fname}} {{people.lname}} </b> </th>
+    </tr>
+    
+    <tr>
+        <br/>
+    </tr>
+    
+    <tr>
+        <td class="line"> <b> Profile Created On: </b> {{ time }} </td>
+    </tr>
+
+
+<tr>
+    <td> <b> Username: </b> {{people.uname}} </td>
+</tr>
+
+<tr>
+    <td> <b> User ID: </b> {{people.userid}} </td>
+</tr>
+
+<tr>
+    <td> <b> Age: </b> {{ people.age }} </td>
+</tr>
+
+<tr>
+    <td> <b> Gender: </b> {{ people.gender }} </td>
+</tr>
+
+<tr>
+    <td class="big">  {{ people.bio }}</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
